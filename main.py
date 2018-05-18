@@ -1,15 +1,10 @@
 import win32process as process
 import win32gui as gui
-from win32helper import Win32Window, Win32WindowPlacement, currentWindow
+from win32helper import getCursorPos, enumWindows, Win32Window
 
-def cb(hwnd, listwin):
-    win = Win32Window(hwnd)
-    if win.isVisible and len(win.title) > 0:
-        listwin.append(Win32Window(hwnd))
+windows = enumWindows()
 
-windows = []
-gui.EnumWindows(cb, windows)
-print(gui.GetCursorInfo())
+print(getCursorPos())
 
 for w in windows:
-    print(w)
+    print(f"{w} : {w.getPosition()}")
