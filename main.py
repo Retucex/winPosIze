@@ -1,6 +1,6 @@
 import win32process as process
 import win32gui as gui
-from win32helper import Win32Window, Win32WindowPlacement
+from win32helper import Win32Window, Win32WindowPlacement, currentWindow
 
 def cb(hwnd, listwin):
     win = Win32Window(hwnd)
