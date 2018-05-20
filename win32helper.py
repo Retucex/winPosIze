@@ -17,6 +17,9 @@ class Win32WindowPlacement:
     def windowedPos(self):
         return (self.posXTopLeft, self.posYTopLeft, self.posXBottomRight, self.posYBottomRight)
 
+    def __str__(self):
+        return ((self.minPosX, self.minPosY), (self.maxPosX, self.maxPosY), (self.posXTopLeft, self.posYTopLeft, self.posXBottomRight, self.posYBottomRight)).__str__()
+
 
 class Win32Window:
     def __init__(self, hwnd):
